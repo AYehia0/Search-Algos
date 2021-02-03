@@ -27,8 +27,25 @@ def dfs(visited, G, node):
         for neighbor in G[node]:
             dfs(visited, G, neighbor)
 
+def test_dfs(visited, graph, node):
+    # adding current node as visited 
+    visited.add(node)
+
+    # printing that node
+    print(node, end="")
+
+    # travelling the graph
+    for neighbour in graph[node]:
+        if neighbour not in visited:
+            test_dfs(visited, graph, neighbour)
+
+
+
+
+v = set()
+
 #print(visited)
 #print(len(graph))
 
 dfs(visited, g.get_graph(), list(graph)[0])
-
+test_dfs(v, g.get_graph(), 'A') 
