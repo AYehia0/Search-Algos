@@ -11,4 +11,5 @@ class GraphTree:
     def print_graph(self):
         print(self.graph)
 
-
+    def get_graph(self):
+        return self.graph

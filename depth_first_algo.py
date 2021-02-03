@@ -1,3 +1,5 @@
+from graph import GraphTree
+
 graph = {
     'A' : ['B','C'],
     'B' : ['D', 'E'],
@@ -7,6 +9,15 @@ graph = {
     'F' : []
 }
 
+g = GraphTree()
+g.add_node('A', 'B')
+g.add_node('A', 'C')
+g.add_node('B', 'D')
+g.add_node('B', 'E')
+g.add_node('C', 'F')
+g.add_node('C', 'B')
+g.add_node('E', 'F')
+g.add_node('E', 'C')
 
 visited = set()
 def dfs(visited, G, node):
@@ -19,5 +30,5 @@ def dfs(visited, G, node):
 #print(visited)
 #print(len(graph))
 
-dfs(visited, graph, list(graph)[0])
+dfs(visited, g.get_graph(), list(graph)[0])
 
